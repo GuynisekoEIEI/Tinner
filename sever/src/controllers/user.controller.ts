@@ -1,4 +1,5 @@
-import Elysia from "elysia"
+import { user } from './../types/user.type'
+import Elysia, { t } from "elysia"
 import { AuthMiddleWare, AuthPayload } from "../middlewares/auth.middleware"
 import { UserService } from "../services/user.service"
 import { UserDto } from "../types/user.type"
@@ -19,6 +20,19 @@ export const UserController = new Elysia({
     }, {
 
     })
+
+    .get('/:username', ({ params: { username } }) => {
+        return UserService.getByuserName(username)
+    }, {
+        detail: { summary: "Get User By Username" },
+        // query: t.Object({
+        //     username: t.String()
+        // }),
+        response: "user",
+        isSignIn: true,
+
+    })
+
     .get('/', ({ query, Auth }) => {
         const user_id = (Auth.payload as AuthPayload).id
         return UserService.get(query, user_id)
