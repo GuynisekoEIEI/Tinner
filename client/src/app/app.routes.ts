@@ -1,3 +1,4 @@
+import { FollowingsComponent } from './followings/followings.component'
 import { Routes } from '@angular/router'
 import { HomeComponent } from './home/home.component'
 import { NotFoundComponent } from './not-found/not-found.component'
@@ -26,6 +27,14 @@ export const routes: Routes = [
             {
                 path: 'profile',
                 loadComponent: () => import('./profile/profile.component').then(c => c.ProfileComponent)
+            },
+            {
+                path: 'followers',
+                loadComponent: () => import('./followers/followers.component').then(c => c.FollowersComponent)
+            },
+            {
+                path: 'followings',
+                loadComponent: () => import('./followings/followings.component').then(c => c.FollowingsComponent)
             }
         ]
     },
