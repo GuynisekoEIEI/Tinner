@@ -5,10 +5,14 @@ import { User } from '../../_models/user'
 import { GalleryItem, GalleryModule, ImageItem } from 'ng-gallery'
 import { Photo } from '../../_models/photo'
 import { ActivatedRoute, Router } from '@angular/router'
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatCardModule } from '@angular/material/card'
+import { MatIconModule } from '@angular/material/icon'
+import { MatButtonModule } from '@angular/material/button'
 
 @Component({
   selector: 'app-member-profile',
-  imports: [GalleryModule],
+  imports: [GalleryModule, MatSidenavModule, MatCardModule, MatIconModule, MatButtonModule],
   templateUrl: './member-profile.component.html',
   styleUrl: './member-profile.component.scss'
 })
