@@ -8,7 +8,7 @@ import { pareQuery, pareUserPhoto } from '../_helper/helper'
 import { firstValueFrom } from 'rxjs'
 
 
-type dataCategory = 'member' | 'follower' | 'following'
+type dataCategory = 'member' | 'followers' | 'following'
 @Injectable({
   providedIn: 'root'
 })
